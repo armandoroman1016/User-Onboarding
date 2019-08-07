@@ -10,7 +10,7 @@ const LoginForm = ( values , props) => {
     const {setPeople} = props
 
     return(
-        <div class = 'form-container'>
+        <div className = 'form-container'>
         <FormikForm >
             <h2 className = 'form-header'>Sign Up</h2>
         
@@ -20,8 +20,15 @@ const LoginForm = ( values , props) => {
 
             <Field type = 'password' placeholder = 'Password' name = 'password'  className = 'input-field' />
 
-            <label for = 'file' className = 'file-label'>
-                <p>Upload Image</p>
+            <Field component="select" className="role-select" name="role">
+                <option>Select A Role</option>
+                <option value="">Big Boss</option>
+                <option value="">Front-End Developer</option>
+                <option value="">Back-End Developer</option>
+            </Field>
+
+            <label htmlFor = 'file' className = 'file-label'>
+                <p>Upload Profile Photo</p>
                 <Field type = 'file' name = 'file' value = {values.file} className = 'button'/>
             </label>
 
