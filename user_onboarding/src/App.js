@@ -17,7 +17,10 @@ function App() {
   return (
     <div className="App">
       <FormikLoginForm setUsers = { setUsers }/>
-      <UsersList users = {users} />
+      <div className = 'users-parent-container'>
+        <h1>Current Users</h1>
+        <UsersList users = {users} />
+      </div>
     </div>
   );
 }

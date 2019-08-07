@@ -5,7 +5,7 @@ const UserCard = (props) => {
   console.log(props)
 
   return(
-  <Card>
+  <Card className = 'user-card'>
     <Image src={props.file} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{props.name}</Card.Header>

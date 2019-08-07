@@ -10,26 +10,30 @@ const LoginForm = ( values , props) => {
     const {setPeople} = props
 
     return(
+        <div class = 'form-container'>
         <FormikForm >
+            <h2 className = 'form-header'>Sign Up</h2>
+        
+            <Field type = 'text' placeholder = 'Name' name = 'name' className = 'input-field' />
 
-            <Field type = 'text' placeholder = 'Name' name = 'name'  />
+            <Field type = 'email' placeholder = 'Email' name = 'email' className = 'input-field' />
 
-            <Field type = 'email' placeholder = 'Email' name = 'email'  />
+            <Field type = 'password' placeholder = 'Password' name = 'password'  className = 'input-field' />
 
-            <Field type = 'password' placeholder = 'Password' name = 'password'  />
-
-            <label for = 'file'>Upload Image
-            <Field type = 'file' name = 'file' value = {values.file}/>
+            <label for = 'file' className = 'file-label'>
+                <p>Upload Image</p>
+                <Field type = 'file' name = 'file' value = {values.file} className = 'button'/>
             </label>
 
-            <label>
+            <label className = 'checkbox-label'>
                 <Field type = 'checkbox' name = 'terms'  value = {values.terms}/>
-                I have read and agree to the Terms of Service
+                <p>I have read and agree to the Terms of Service</p>
             </label>
 
             <button type = 'submit'>Submit</button>
         
         </FormikForm>
+        </div>
     )
 
 }
