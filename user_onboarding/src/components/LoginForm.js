@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import defaultImage from '../assets/images/defaultImage.png'
 import {Form as FormikForm , Field , withFormik} from 'formik'
 import * as Yup from 'yup'
 
@@ -17,8 +18,12 @@ const LoginForm = ( values , props) => {
 
             <Field type = 'password' placeholder = 'Password' name = 'password'  />
 
+            <label for = 'file'>Upload Image
+            <Field type = 'file' name = 'file' value = {values.file}/>
+            </label>
+
             <label>
-                <Field type = 'checkbox' name = 'terms'  />
+                <Field type = 'checkbox' name = 'terms'  value = {values.terms}/>
                 I have read and agree to the Terms of Service
             </label>
 
@@ -35,12 +40,13 @@ const FormikLoginForm = withFormik( {
 
     
 
-    mapPropsToValues({name, email, password, terms}){
+    mapPropsToValues({name, email, password, terms, file}){
         return{
             name : name || '',
             email : email || '',
             password : password || '',
-            terms : terms || false
+            terms : terms || false,
+            file : file || defaultImage
         }
     },
 
